@@ -21,7 +21,7 @@ const AuthenticateContainer = React.createClass({
       .then(() => this.context.router.replace('feed'))
   },
   render () {
-    console.log('is fetching', this.props.isFetching)
+    // console.log('is fetching', this.props.isFetching)
     return (
       <Authenticate
         isFetching={this.props.isFetching}
@@ -33,7 +33,7 @@ const AuthenticateContainer = React.createClass({
 
 function mapStateToProps (state) {
   // this is SICK!!! final state shows exactly what users schema looks like in redux-schema.js
-  console.log('state', state)
+  // console.log('state', state)
   return {
     isFetching: state.isFetching,
     error: state.error,

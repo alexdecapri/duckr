@@ -12,7 +12,7 @@ const store = createStore(users, applyMiddleware(thunk))
 function checkAuth (nextState, replace) {
   const isAuthed = checkIfAuthed(store)
   const nextPathName = nextState.location.pathname
-  if (nextPathName === '/' || nextPathName === '/auth' ) {
+  if (nextPathName === '/' || nextPathName === '/auth') {
     if (isAuthed === true) {
       replace('/feed')
     }

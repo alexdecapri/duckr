@@ -5,7 +5,7 @@ import { container, innerContainer } from './styles.css'
 
 const MainContainer = React.createClass({
   propTypes: {
-    isAuthed: PropTypes.bool.isREquired,
+    isAuthed: PropTypes.bool.isRequired,
   },
   render () {
     return (

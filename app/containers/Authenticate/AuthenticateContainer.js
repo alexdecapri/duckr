@@ -31,17 +31,7 @@ const AuthenticateContainer = React.createClass({
   },
 })
 
-function mapStateToProps (state) {
-  // this is SICK!!! final state shows exactly what users schema looks like in redux-schema.js
-  // console.log('state', state)
-  return {
-    isFetching: state.isFetching,
-    error: state.error,
-  }
-}
-
-function mapDispatchToProps (dispatch) {
-  return bindActionCreators(userActionCreators, dispatch)
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(AuthenticateContainer)
+export default connect(
+  ({users}) => ({isFetching: users.isFetching, err: users.error}),
+  (dispatch) => bindActionCreators(userActionCreators, dispatch)
+)(AuthenticateContainer)
